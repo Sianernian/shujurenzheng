@@ -1,0 +1,63 @@
+
+(function() {
+  var baoquan = document.getElementById("baoquan-evidence"),
+    logo = document.createElement("img"),
+    mainInfo = document.createElement("div"),
+    tip = document.createElement("p"),
+    span = document.createElement("span"),
+    link = document.createElement("a"),
+    news = document.createElement("a"),
+    qrcode = document.createElement("img");
+
+  baoquan.setAttribute('style','width: 100%; height: 120px; background-color: #eaf3fd; position: relative;');
+
+  logo.id = "baoquan-logo";
+  logo.className = "baoquan-logo";
+  logo.src="https://www.baoquan.com/yibaoquan.png";
+  logo.setAttribute('style','height: 82px; top: 19px; left: 40px; position: absolute;');
+
+  mainInfo.id = "baoquan-main";
+  mainInfo.className = "baoquan-main";
+  mainInfo.setAttribute('style','margin-left: 140px; padding-top: 24px;');
+
+  tip.id = "baoquan-tip";
+  tip.className = "baoquan-tip";
+  tip.setAttribute('style','margin-left: 10px');
+
+  span.id = "baoquan-word";
+  span.className = "baoquan-word";
+  span.innerText="本文已在保全网存证确权，侵权必究！";
+  span.setAttribute('style','font-size: 16px; color: #333');
+
+  link.id = "baoquan-link";
+  link.className = "baoquan-link";
+  link.innerText="查看证书 > ";
+  link.href = "https://www.baoquan.com/attestations/"+ baoquan.title;
+  link.target = "_blank";
+  link.setAttribute('style','width: 100px; height: 28px; line-height: 28px; text-align: center; border-radius: 4px; background-color: #1687ee; ' +
+    'color: #fff; display: inline-block; font-size: 14px; margin-left: 5px');
+
+  news.id = "baoquan-news";
+  news.className = "baoquan-news";
+  news.innerText="【保全网】--“全国首例区块链存证案”的独家技术支持方";
+  news.href = "https://www.baoquan.com/home";
+  news.target = "_blank";
+  news.setAttribute('style','margin-top: 14px; color: #3d81f2; font-size: 16px; display: block');
+
+  qrcode.id = "baoquan-qrcode";
+  qrcode.className = "baoquan-qrcode";
+  qrcode.src="https://www.baoquan.com/ercode.png";
+  qrcode.setAttribute('style','height: 98px; top: 11px; right: 40px; position: absolute;');
+
+  baoquan.appendChild(logo);
+  baoquan.appendChild(mainInfo);
+  mainInfo.appendChild(tip);
+  tip.appendChild(span);
+  tip.appendChild(link);
+  mainInfo.appendChild(news);
+  baoquan.appendChild(qrcode);
+})();
+
+
+
+
