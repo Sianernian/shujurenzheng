@@ -2,8 +2,7 @@ package controllers
 
 import (
 	"DataCertProject/models"
-	"astaxie/beego"
-	"fmt"
+	"github.com/astaxie/beego"
 )
 
 type RegisterController struct {
@@ -18,19 +17,15 @@ func (r *RegisterController) Post(){
 		r.Ctx.WriteString("解析错误，请重试！")
 		return
 	}
-	r.Ctx.WriteString("123456")
 	//2.保存信息到数据库
-
-	id,err :=user.SaveUser()
+	_,err =user.SaveUser()
 
 	if err !=nil{
 		r.Ctx.WriteString("失败")
 		return
 	}//注册成功
 
-	r.TplName="login.html"
-	fmt.Println(id)
+	r.TplName = "login.html"
 	//3.返回前端结果
-
 
 }

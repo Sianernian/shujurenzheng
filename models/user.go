@@ -34,3 +34,17 @@ func (u User) SaveUser()(int64 ,error){
 	}
 	return id , nil
 }
+
+func (q User)Query() error{
+	a :=md5.New()
+	a.Write([]byte(q.Pwd))
+	bytes :=a.Sum(nil)
+	q.Pwd =hex.EncodeToString(bytes)
+
+	row :=db_mysql.Db.QueryRow("select phone from user where phone = ? and pwd = ?",q.Phone,q.Pwd)
+	err :=row.Scan(&q.Phone)
+	if err !=nil{
+		return err
+	}
+	return  nil
+}
