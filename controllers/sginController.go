@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"DataCertProject/models"
+	"fmt"
 	"github.com/astaxie/beego"
 )
 
@@ -10,18 +11,29 @@ type SginController struct{
 }
 
 
+// 刷新
+
+func (s *SginController)Get(){
+	s.TplName = "sgin_in.html"
+}
+
 func (s *SginController) Post(){
 	var user models.User
+
 	err :=s.ParseForm(&user)
+
 	if err !=nil{
 		s.Ctx.WriteString("解析错误，请重试！")
 		return
 	}
 
-	err = user.Query()
+	a,err := user.Query()
 	if err !=nil{
+		fmt.Println(err.Error())
 		s.TplName = "sgin_in.html"
 		return
 	}
-	s.TplName="sgin_in.html"
+	s.Data["Phone"] =a.Phone
+
+	s.TplName="sgin_in.html" //{{.Phone}}
 }

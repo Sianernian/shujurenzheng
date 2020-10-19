@@ -86,29 +86,6 @@
                     <header class="navbar active-navbar">
                         <div class="navigation">
                             <div class="header">
-{{/*                                <ul class="nav">*/}}
-{{/*                                    <a href="https://www.baoquan.com/user-statistic?lang=zh">*/}}
-{{/*                                        <li class="">概览</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/attestations-list?lang=zh">*/}}
-{{/*                                        <li class="activesItem">存证确权</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/monitor/certificate?lang=zh">*/}}
-{{/*                                        <li class="">站点监测</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/evidences-all/url?lang=zh">*/}}
-{{/*                                        <li class="">在线取证</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/certificate/list?lang=zh">*/}}
-{{/*                                        <li class="">司法出证</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/purchase-notarization?lang=zh">*/}}
-{{/*                                        <li class="">购买公证</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                    <a href="https://www.baoquan.com/lawAnd?lang=zh">*/}}
-{{/*                                        <li class="">律师服务</li>*/}}
-{{/*                                    </a>*/}}
-{{/*                                </ul>*/}}
                             </div>
                             <div class="right-info">
                                 <div class="info">
@@ -116,18 +93,13 @@
                                         <p class="help-icon">?</p>
                                         <div class="help-text">帮助</div>
                                     </div>
-{{/*                                    <li class="message notice" style="position: relative;"><i class="toDoNumber">1</i><i class="iconfont font-notic"></i>*/}}
-{{/*                                        <div class="hover-notice">*/}}
-{{/*                                            <p>*/}}
-{{/*                                                <!-- react-text: 5141 -->当前你有*/}}
-{{/*                                                <!-- /react-text --><span class="number">1</span>*/}}
-{{/*                                                <!-- react-text: 5143 -->条未读消息*/}}
-{{/*                                                <!-- /react-text -->*/}}
-{{/*                                            </p><a href="https://www.baoquan.com/notifications?lang=zh"><span>查看消息</span></a></div>*/}}
-{{/*                                    </li>*/}}
                                     <div class="notify-container">
                                         <div class="user">
-                                            <div class="user-content"><span class="phone">{{.phone}}</span><i class="iconfont font-down"></i></div>
+                                            <div class="user-content"><span class="phone">{{.Phone}}
+                                                </span>
+                                                <i class="iconfont font-down">
+
+                                                </i></div>
                                             <ul>
                                                 <a href="#">
                                                     <li>账户中心</li>
@@ -155,7 +127,7 @@
                     <div class="container-wrapper">
                         <div class="container member-container">
                             <p class="table-name" style="display: block;">
-                            <p class="second-level-head table-name"><span><div><i class="iconfont font-arrow-left"></i><span>返回</span></div>
+                            <p class="second-level-head table-name"><span><div><i class="iconfont font-arrow-left"></i><span></span></div>
 								</span><span class="title-name">新增存证确权</span>
                                 <!-- react-text: 5179 -->
                                 <!-- /react-text -->
@@ -173,11 +145,11 @@
                                                 <div class="toolTip"><span class="arrow att-arrow"></span><i class="iconfont font-console"></i>
                                                     <div class="context">
                                                         <p class="title">数据保全</p>
-                                                        <p class="tipText">数据保全是保全网针对原创人员推出的防止侵权利器，保全网通过对接国家授时中心，在您上传原创作品的同时，进行作品实时固化，以方便您的作品在日后发生侵权时，及时证明您的作品优先时间。</p>
+                                                        <p class="tipText">数据保全是针对原创人员推出的防止侵权利器，保全网通过对接国家授时中心，在您上传原创作品的同时，进行作品实时固化，以方便您的作品在日后发生侵权时，及时证明您的作品优先时间。</p>
                                                         <hr>
                                                         <p class="tipsMore att-tips-more">数据保全的功能优势</p>
                                                         <p class="tips">时间戳证明</p>
-                                                        <p class="tipsText">对接中国国家授时中心、苹果NTP服务，可靠的高精度的授时服务，保障时间的精准性。</p>
+                                                        <p class="tipsText">对接中授时中心、苹果N服务，可靠的高精度的授时服务，保障时间的精准性。</p>
                                                         <p class="tips">作品保全</p>
                                                         <p class="tipsText">结合区块链技术，对上传的作品打散分布存储，保证作品的安全性与私密性。</p>
                                                         <p class="tips">司法出证</p>
@@ -238,9 +210,11 @@
                                                             <!-- react-text: 5239 -->
                                                             <!-- /react-text -->
                                                         </div>
-                                                    </div><form action="/home"  enctype="multipart/form-data"  method="post">
+                                                    </div><form action="/home"  enctype="multipart/form-data"  method="post" >
                                                         <input type="file" name ="file"><br><br>
+                                                        <input type="text" value="{{.Phone}}" hidden = "hidden" name="phone">
                                                         <input type="submit" value="上传相关文件">
+
                                                     </form>
                                                 </div>
                                                 <div class="files-tip">

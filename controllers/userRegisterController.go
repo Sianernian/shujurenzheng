@@ -9,10 +9,19 @@ type RegisterController struct {
 	beego.Controller
 }
 
+//刷新页面
+
+func (r *RegisterController)Get(){
+	r.TplName = "login.html"
+}
+
+
+
 func (r *RegisterController) Post(){
 	// 1. 解析数据
 	var user models.User
 	err :=r.ParseForm(&user)
+
 	if err !=nil{
 		r.Ctx.WriteString("解析错误，请重试！")
 		return
