@@ -12,7 +12,6 @@ type SginController struct{
 
 
 // 刷新
-
 func (s *SginController)Get(){
 	s.TplName = "sgin_in.html"
 }
@@ -30,7 +29,7 @@ func (s *SginController) Post(){
 	a,err := user.Query()
 	if err !=nil{
 		fmt.Println(err.Error())
-		s.TplName = "sgin_in.html"
+
 		return
 	}
 	s.Data["Phone"] =a.Phone

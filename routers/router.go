@@ -18,6 +18,7 @@ func init() {
 
     // 数据在列表页面
     beego.Router("/record",&controllers.UploadController{})
-
+    //认证按钮 跳转 新增页面
+    //beego.Router("/upload_file",)
 
 }
